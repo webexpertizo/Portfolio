@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Rizwan Zaman - Full Stack Web Developer Portfolio</title>
+<meta name="description" content="Portfolio of Rizwan Zaman, a skilled Full Stack Web Developer, ReactJS Specialist, WordPress Developer, Shopify Expert, and Graphic Designer. Explore projects and services.">
+<meta name="keywords" content="Full Stack Developer, ReactJS Developer, WordPress Developer, Shopify Expert, Graphic Designer, Web Developer Portfolio, Rizwan Zaman">
+
+
+  <!-- Favicons -->
+  <link href="assets/img/fav.webp" rel="icon">
+  <link href="assets/img/fav.webp" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .bubbles_wrap {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      overflow: hidden;
+      pointer-events: none;
+    }
+  
+    .bubble {
+      border-radius: 50%;
+      height: 5px;
+      width: 5px;
+      position: absolute;
+      bottom: -5px; /* Start slightly off the bottom of the screen */
+    }
+  
+    /* Animation Keyframes */
+    @keyframes animateBubble {
+      0% { bottom: -5px; opacity: 0; } /* Start off the bottom of the screen */
+      20% { opacity: 1; } /* Fade in */
+      100% { bottom: 100vh; opacity: 0; } /* Move up off the screen */
+    }
+  
+    @keyframes sideWays {
+      0% { margin-left: 0; }
+      100% { margin-left: 25px; }
+    }
+  
+    /* Individual Bubbles with Animations from Bottom to Top */
+    .x1 { animation: animateBubble 12s linear infinite, sideWays 5s ease-in-out infinite alternate; left: 6%; background: #004AAD; }
+    .x2 { animation: animateBubble 13s linear infinite, sideWays 6s ease-in-out infinite alternate; left: 12%; background: #5C47B1; }
+    .x3 { animation: animateBubble 11s linear infinite, sideWays 5.5s ease-in-out infinite alternate; left: 18%; background: #004AAD; }
+    .x4 { animation: animateBubble 14s linear infinite, sideWays 5.2s ease-in-out infinite alternate; left: 24%; background: #FF6347; }
+    .x5 { animation: animateBubble 12s linear infinite, sideWays 6s ease-in-out infinite alternate; left: 30%; background: #FF69B4; }
+    .x6 { animation: animateBubble 13s linear infinite, sideWays 5s ease-in-out infinite alternate; left: 36%; background: #00FA9A; }
+    .x7 { animation: animateBubble 15s linear infinite, sideWays 6.5s ease-in-out infinite alternate; left: 42%; background: #004AAD; }
+    .x8 { animation: animateBubble 11s linear infinite, sideWays 5.7s ease-in-out infinite alternate; left: 48%; background: #FFA500; }
+    .x9 { animation: animateBubble 14s linear infinite, sideWays 5.8s ease-in-out infinite alternate; left: 54%; background: #8A2BE2; }
+    .x10 { animation: animateBubble 12s linear infinite, sideWays 5.5s ease-in-out infinite alternate; left: 60%; background: white; }
+    .x11 { animation: animateBubble 13s linear infinite, sideWays 6.2s ease-in-out infinite alternate; left: 66%; background: #004AAD; }
+    .x12 { animation: animateBubble 11s linear infinite, sideWays 5.3s ease-in-out infinite alternate; left: 72%; background: #7FFFD4; }
+    .x13 { animation: animateBubble 14s linear infinite, sideWays 6s ease-in-out infinite alternate; left: 78%; background: #FF4500; }
+    .x14 { animation: animateBubble 12s linear infinite, sideWays 5.6s ease-in-out infinite alternate; left: 84%; background: #004AAD; }
+    .x15 { animation: animateBubble 13s linear infinite, sideWays 6.2s ease-in-out infinite alternate; left: 90%; background: #DA70D6; }
+    .x16 { animation: animateBubble 11s linear infinite, sideWays 5.5s ease-in-out infinite alternate; left: 96%; background: #004AAD; }
+    .x17 { animation: animateBubble 15s linear infinite, sideWays 6s ease-in-out infinite alternate; left: 3%; background: #FF1493; }
+    .x18 { animation: animateBubble 12s linear infinite, sideWays 6s ease-in-out infinite alternate; left: 9%; background: #5C47B1; }
+    .x19 { animation: animateBubble 14s linear infinite, sideWays 5.5s ease-in-out infinite alternate; left: 15%; background: #00BFFF; }
+    .x20 { animation: animateBubble 13s linear infinite, sideWays 5.7s ease-in-out infinite alternate; left: 21%; background: #FF6347; }
+  </style>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+  /* Splash Screen Style */
+  #splash-screen {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5C47B1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    font-family: "Great Vibes", cursive;
+    overflow: hidden;
+  }
+
+  /* Curtain Animation */
+  @keyframes curtainEffect {
+    0% {
+      height: 100%;
+    }
+    100% {
+      height: 0;
+    }
+  }
+
+  /* Styling for dynamic text */
+  #dynamic-text {
+    font-size: 4rem;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .zoom {
+    font-size: 8rem;
+    animation: zoomEffect 1s ease-in-out forwards;
+  }
+
+  .final-line {
+    font-size: 5rem;
+    transition: font-size 1s ease-in-out;
+  }
+
+  /* Tagline Style */
+  .tagline {
+    font-size: 45px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Zoom Animation */
+  @keyframes zoomEffect {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    #dynamic-text {
+      font-size: 35px;
+    }
+
+    .zoom {
+      font-size: 5rem;
+    }
+
+    .tagline {
+      font-size: 25px;
+    }
+
+
+    
+  .final-line {
+    font-size: 2rem;
+    transition: font-size 1s ease-in-out;
+  }
+  }
+</style>
+</head>
+<div id="splash-screen">
+  <div id="dynamic-text"></div>
+  <div class="tagline" style="opacity: 0;">Where Creativity Meets Functionality in Web Development!</div>
+</div>
+
+<script>
+  // Use DOMContentLoaded for faster execution
+  document.addEventListener('DOMContentLoaded', function () {
+    const words = ["Welcome", "to", "Rizwan Zaman's", "Portfolio"];
+    const dynamicText = document.querySelector('#dynamic-text');
+    let currentIndex = 0;
+    let finalText = '';
+
+    // Disable scrolling during splash screen
+    document.body.style.overflow = 'hidden';
+
+    function showWord() {
+      if (currentIndex < words.length) {
+        // Add the current word to the screen
+        dynamicText.innerHTML = `<span class="zoom">${words[currentIndex]}</span>`;
+        finalText += words[currentIndex] + ' ';
+
+        // Wait 600ms, then update the final line
+        setTimeout(() => {
+          dynamicText.innerHTML = `<span class="final-line">${finalText.trim()}</span>`;
+          currentIndex++;
+          showWord();
+        }, 600); // Adjust delay time if necessary
+      } else {
+        // Once all words are shown, fade in the tagline
+        setTimeout(() => {
+          document.querySelector('.tagline').style.opacity = 1;
+        }, 800);
+
+        // Remove splash screen and re-enable scrolling
+        setTimeout(() => {
+          document.querySelector('#splash-screen').style.animation = 'curtainEffect 2s ease-in-out forwards';
+          document.body.style.overflow = ''; // Re-enable scrolling
+        }, 2000); // Adjust timing for smoother transition
+      }
+    }
+
+    showWord();
+  });
+</script>
+
+<body class="index-page">
+ 
+  
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo (2).webp" alt="">
+        <!-- <h1 class="sitename">Personal</h1> -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="menu-link active" >Home</a></li>
+          <li><a href="#about" class="menu-link">About</a></li>
+          <li><a href="#skills" class="menu-link" >Skills</a></li>
+          <li><a href="#services" class="menu-link" >Services</a></li>
+          <li><a href="#portfolio" class="menu-link" >Portfolio</a></li>
+          <li><a href="#contact" class="menu-link" >Contact Me</a></li>
+          <li><a href="Rizwan.pdf" >Resume</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      
+    </div>
+  </header>
+<script>
+/**
+ * Helper function to select elements
+ */
+ const select = (el, all = false) => {
+  el = el.trim();
+  if (all) {
+    return [...document.querySelectorAll(el)];
+  } else {
+    return document.querySelector(el);
+  }
+};
+
+/**
+ * Easy on scroll event listener 
+ */
+const onscroll = (el, listener) => {
+  el.addEventListener('scroll', listener);
+};
+
+/**
+ * Navbar links active state on scroll
+ */
+let navbarlinks = select('#navmenu .menu-link', true); // Changed to match your menu links
+const navbarlinksActive = () => {
+  let position = window.scrollY + 200; // Adjust scroll position for better effect
+  navbarlinks.forEach(navbarlink => {
+    if (!navbarlink.hash) return;
+    let section = select(navbarlink.hash);
+    if (!section) return;
+    // Check if the section is in the viewport
+    if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+      navbarlink.classList.add('active');
+    } else {
+      navbarlink.classList.remove('active');
+    }
+  });
+};
+
+// Initial check on page load
+window.addEventListener('load', navbarlinksActive);
+
+// Adding scroll listener to document for updating active state on scroll
+onscroll(document, navbarlinksActive);
+
+/**
+ * Scrolls to an element with header offset
+ */
+const scrollto = (el) => {
+  let elementPos = select(el).offsetTop;
+  window.scrollTo({
+    top: elementPos,
+    behavior: 'smooth'
+  });
+};
+
+/**
+ * Add smooth scrolling behavior to menu links (for anchor links)
+ */
+navbarlinks.forEach(navbarlink => {
+  navbarlink.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    scrollto(navbarlink.hash); // Scroll to the corresponding section
+  });
+});
+
+
+</script>
+  <main class="main">
+  
+    <!-- Hero Section -->
+<section id="hero" class="hero section">
+  <div class="content">
+    <h1>Rizwan Zaman</h1>
+    <h3>Full Stack Developer | ReactJS Specialist | WordPress Developer | Shopify Expert | Graphic Designer</h3>
+ <div class="social-links">
+      <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+  <!-- Vanta.js Background Container -->
+  <div id="vanta-bg"></div>
+</section>
+
+<!-- Three.js Library (Required by Vanta.js) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<!-- Vanta.js NET Effect -->
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<!-- Typed.js for Typing Animation (Optional) -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<!-- Your Custom JavaScript -->
+
+<script>
+  // Initialize Vanta.js NET Effect
+  VANTA.NET({
+    el: "#vanta-bg",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: 0x5C47B1, // Node Color Set to Purple (#5C47B1)
+    backgroundColor: 0x152035, // Dark Background Color (Hex: #152035)
+    points: 12.00,
+    maxDistance: 20.00,
+    spacing: 15.00
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const typed = new Typed('.typed', {
+      strings: ["Full Stack Web Developer", "ReactJS Specialist", "WordPress Developer", "Shopify Expert", "Graphic Designer"],
+
+      typeSpeed: 50,
+      backSpeed: 25,
+      backDelay: 2000,
+      loop: true
+    });
+  });
+</script>
+
+
+
+    <div class="bubbles_wrap">
+      <div class="bubble x1"></div>
+      <div class="bubble x2"></div>
+      <div class="bubble x3"></div>
+      <div class="bubble x4"></div>
+      <div class="bubble x5"></div>
+      <div class="bubble x6"></div>
+      <div class="bubble x7"></div>
+      <div class="bubble x8"></div>
+      <div class="bubble x9"></div>
+      <div class="bubble x10"></div>
+      <div class="bubble x11"></div>
+      <div class="bubble x12"></div>
+      <div class="bubble x13"></div>
+      <div class="bubble x14"></div>
+      <div class="bubble x15"></div>
+      <div class="bubble x16"></div>
+      <div class="bubble x17"></div>
+      <div class="bubble x18"></div>
+      <div class="bubble x19"></div>
+      <div class="bubble x20"></div>
+    </div>
+
+
+   <!-- About Section -->
+<section id="about" class="about section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4 justify-content-center">
+      <div class="col-lg-4">
+        <div style="position: relative; width: 100%;">
+          <img src="assets/img/rizz.webp" width="100%" alt="Your Picture">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #152035; opacity: 0.7; pointer-events: none;"></div>
+        </div>
+        
+      </div>
+      <div class="col-lg-8 content">
+        <h2>Full Stack Web Developer</h2>
+        <p class="fst-italic py-3">
+          I am a skilled Full Stack Web Developer with 2 years of experience in building responsive and user-friendly websites and web applications. I specialize in both front-end and back-end development, delivering seamless user experiences while adhering to modern design principles and technologies.
+        </p>
+        <div class="row">
+          <div class="col-lg-6">
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>5 June 2000</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a href="https://www.webexpertizo.com/">www.webexpertizo.com</a></span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+92 333 6623823</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Karachi, Pakistan</span></li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>24</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Science (Computer Science)</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>1rizwanzaman@gmail.com</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="py-3">
+          I take pride in crafting visually appealing and functional websites and applications. My passion for both front-end and back-end development drives me to continuously learn and adopt the latest technologies. I collaborate effectively with teams and clients to bring ideas to life, ensuring high-quality results that exceed expectations.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- /About Section -->
+
+
+ <!-- Stats Section -->
+<section id="stats" class="stats section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="bi bi-emoji-smile"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Happy Clients</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="bi bi-journal-richtext"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="75" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Projects Completed</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="bi bi-headset"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="1500" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Hours of Support</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="bi bi-award"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Years of Experience</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+    </div>
+  </div>
+</section>
+<!-- /Stats Section -->
+
+
+<!-- Skills Section -->
+<section id="skills" class="skills section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div><span>My</span> <span class="description-title">Skills</span></div>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row skills-content skills-animation">
+
+      <div class="col-lg-6">
+        <div class="progress">
+          <span class="skill"><span>HTML</span> <i class="val">90%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+        <div class="progress">
+          <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+        <div class="progress">
+          <span class="skill"><span>Bootstrap</span> <i class="val">90%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+        <div class="progress">
+          <span class="skill"><span>WordPress</span> <i class="val">90%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+        <div class="progress">
+          <span class="skill"><span>ReactJS</span> <i class="val">80%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+
+
+        
+        <div class="progress">
+          <span class="skill"><span>MySQL</span> <i class="val">90%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+      </div>
+
+      <div class="col-lg-6">
+        <div class="progress">
+          <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+
+        <div class="progress">
+          <span class="skill"><span>PHP</span> <i class="val">75%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+        <div class="progress">
+          <span class="skill"><span>Laravel</span> <i class="val">70%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+        <div class="progress">
+          <span class="skill"><span>C Language</span> <i class="val">65%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+        <div class="progress">
+          <span class="skill"><span>Java</span> <i class="val">70%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+      </div>
+    </div>
+  </div>
+</section><!-- /Skills Section -->
+
+
+   
+
+
+
+      <!-- Services Section -->
+<section id="services" class="services section">
+<!-- Section Title -->
+<div class="container section-title" data-aos="fade-up">
+  <h2>Services</h2>
+  <div><span>My</span> <span class="description-title">Services</span></div>
+</div><!-- End Section Title -->
+  <div class="container">
+
+    <div class="row gy-4">
+      <!-- Full Stack Web Development -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-code-slash"></i>
+          </div>
+          <a href="service-details.html" class="stretched-link">
+            <h3>Full Stack Web Development</h3>
+          </a>
+          <p>I specialize in both front-end and back-end development to build dynamic, scalable web applications. From interactive UIs to efficient server-side code, I ensure seamless integration and flawless performance across all devices.</p>
+        </div>
+      </div><!-- End Service Item -->
+    
+      <!-- Custom Web Development -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-code-slash"></i>
+          </div>
+          <a href="service-details.html" class="stretched-link">
+            <h3>Custom Web Development</h3>
+          </a>
+          <p>I specialize in crafting bespoke websites tailored to meet your unique business needs. From dynamic features to seamless functionality, I ensure your website is scalable, user-friendly, and primed to drive results. Let's build your vision into reality.</p>
+        </div>
+      </div><!-- End Service Item -->
+    
+      <!-- WordPress Development -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-lightbulb"></i>
+          </div>
+          <a href="service-details.html" class="stretched-link">
+            <h3>WordPress Development</h3>
+          </a>
+          <p>Leverage the power of WordPress with high-performing, easy-to-manage websites tailored to your requirements. From custom themes to advanced features, I deliver solutions that are efficient and scalable.</p>
+        </div>
+      </div><!-- End Service Item -->
+    
+      <!-- Shopify Store Development -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-layout-text-window-reverse"></i>
+          </div>
+          <a href="service-details.html" class="stretched-link">
+            <h3>Shopify Store Development</h3>
+          </a>
+          <p>Maximize your e-commerce potential with a professionally designed Shopify store. I create customized solutions that enhance user experience, streamline management, and boost your sales conversions.</p>
+        </div>
+      </div><!-- End Service Item -->
+    
+      <!-- SEO Optimization -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-bar-chart-line"></i>
+          </div>
+          <a href="service-details.html" class="stretched-link">
+            <h3>SEO Optimization</h3>
+          </a>
+          <p>Boost your online presence with data-driven SEO strategies. I ensure your website ranks higher on search engines, attracts the right audience, and generates sustained organic traffic for long-term success.</p>
+        </div>
+      </div><!-- End Service Item -->
+    
+      <!-- Graphic Design -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-palette"></i>
+          </div>
+          <a href="service-details.html" class="stretched-link">
+            <h3>Graphic Design</h3>
+          </a>
+          <p>Elevate your brand identity with visually stunning graphic design. From compelling logos to captivating marketing materials, I help businesses communicate their vision effectively through design.</p>
+        </div>
+      </div><!-- End Service Item -->
+    
+    </div>
+    
+
+  </div>
+
+</section><!-- /Services Section -->
+
+
+  <!-- Portfolio Section -->
+<section id="portfolio" class="portfolio section">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Portfolio</h2>
+    <div><span>My</span> <span class="description-title">Recent Web Development Projects</span></div>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <!-- Isotope Layout -->
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+      <!-- Portfolio Container -->
+      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+      
+        <!-- Portfolio Items (Initially Display Only 3) -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app" id="portfolio-item-1">
+          <div class="portfolio-content h-100">
+            <img src="assets/img/texas.webp" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <a href="assets/img/texas.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="https://texaswebcoders.com/" target="_blank"  title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app" id="portfolio-item-2">
+          <div class="portfolio-content h-100">
+            <img src="assets/img/webexpertizo.webp" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <a href="assets/img/webexpertizo.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="https://www.webexpertizo.com/" target="_blank"  title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app" id="portfolio-item-3">
+          <div class="portfolio-content h-100">
+            <img src="assets/img/prx.webp" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <a href="assets/img/prx.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="https://prxresearch.com" target="_blank"  title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+      </div><!-- End Portfolio Items -->
+
+      <!-- Load More Button -->
+      
+      <div class="text-center">
+        <br>
+        <button id="load-more-btn" class="btn" style="background-color: #5C47B1; color: white; border-radius: 50px; width: 300px;">Load More</button>
+    </div>
+    
+    
+    </div><!-- End Isotope Layout -->
+  </div><!-- End Container -->
+
+</section>
+
+<!-- Modal for Remaining Portfolio Items -->
+<div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="max-width: 90%;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="portfolioModalLabel" style="color: #5C47B1;">Website Projects</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row gy-4 isotope-container">
+        
+          <!-- All Portfolio Items Here (These Will Be Hidden Initially) -->
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app" id="portfolio-item-4">
+            <div class="portfolio-content h-100">
+              <img src="assets/img/inf.webp" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <a href="assets/img/inf.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://infclinical.com" target="_blank"  title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app" id="portfolio-item-5">
+            <div class="portfolio-content h-100">
+              <img src="assets/img/www.webp" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <a href="assets/img/www.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://wellnessclinical.com" target="_blank"  title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+          
+
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div class="portfolio-content h-100">
+                <img src="assets/img/NAS.webp" class="img-fluid" alt="NAS Project">
+                <div class="portfolio-info">
+                    <a href="assets/img/NAS.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                    <a href="https://rizwanzaman65.github.io/nas_updated01/" target="_blank"  title="More Details" class="details-link">
+                        <i class="bi bi-link-45deg"></i>
+                    </a>
+                </div>
+            </div>
+        </div><!-- End Portfolio Item -->
+        
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div class="portfolio-content h-100">
+                <img src="assets/img/c.webp" class="img-fluid" alt="Complete Technology Project">
+                <div class="portfolio-info">
+                    <a href="assets/img/c.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                    <a href="https://www.completetechnology.co.za" target="_blank"  title="More Details" class="details-link">
+                        <i class="bi bi-link-45deg"></i>
+                    </a>
+                </div>
+            </div>
+        </div><!-- End Portfolio Item -->
+        
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div class="portfolio-content h-100">
+                <img src="assets/img/mell.webp" class="img-fluid" alt="Millennium Textiles Project">
+                <div class="portfolio-info">
+                    <a href="assets/img/mell.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                    <a href="https://millennium-textiles.com" target="_blank"  title="More Details" class="details-link">
+                        <i class="bi bi-link-45deg"></i>
+                    </a>
+                </div>
+            </div>
+        </div><!-- End Portfolio Item -->
+        
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div class="portfolio-content h-100">
+                <img src="assets/img/sky.webp" class="img-fluid" alt="Skyelink Investments Project">
+                <div class="portfolio-info">
+                    <a href="assets/img/sky.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                    <a href="http://skyelinkinvestments.com/" target="_blank"  title="More Details" class="details-link">
+                        <i class="bi bi-link-45deg"></i>
+                    </a>
+                </div>
+            </div>
+        </div><!-- End Portfolio Item -->
+        
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+          <div class="portfolio-content h-100">
+              <img src="assets/img/moonstar.webp" class="img-fluid" alt="Moonstar Project">
+              <div class="portfolio-info">
+                  <a href="assets/img/moonstar.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="https://www.admanigroup.com" target="_blank"  title="More Details" class="details-link">
+                      <i class="bi bi-link-45deg"></i>
+                  </a>
+              </div>
+          </div>
+      </div><!-- End Portfolio Item -->
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+          <div class="portfolio-content h-100">
+              <img src="assets/img/myde.webp" class="img-fluid" alt="Myde Project">
+              <div class="portfolio-info">
+                  <a href="assets/img/myde.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="https://mydestore.com" target="_blank"  title="More Details" class="details-link">
+                      <i class="bi bi-link-45deg"></i>
+                  </a>
+              </div>
+          </div>
+      </div><!-- End Portfolio Item -->
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+          <div class="portfolio-content h-100">
+              <img src="assets/img/loi.webp" class="img-fluid" alt="Learning Sof Islam Project">
+              <div class="portfolio-info">
+                  <a href="assets/img/loi.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="https://learningsofislam.com" target="_blank"  title="More Details" class="details-link">
+                      <i class="bi bi-link-45deg"></i>
+                  </a>
+              </div>
+          </div>
+      </div><!-- End Portfolio Item -->
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+          <div class="portfolio-content h-100">
+              <img src="assets/img/car1.webp" class="img-fluid" alt="Car Site Project">
+              <div class="portfolio-info">
+                  <a href="assets/img/car1.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="https://rizwanzaman65.github.io/carsite/" target="_blank"  title="More Details" class="details-link">
+                      <i class="bi bi-link-45deg"></i>
+                  </a>
+              </div>
+          </div>
+      </div><!-- End Portfolio Item -->
+
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+        <div class="portfolio-content h-100">
+            <img src="assets/img/coffee.webp" class="img-fluid" alt="Coffee Website Project">
+            <div class="portfolio-info">
+                <a href="assets/img/coffee.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                </a>
+                <a href="https://rizwanzaman65.github.io/Coffee-webiste/" target="_blank"  title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                </a>
+            </div>
+        </div>
+    </div><!-- End Portfolio Item -->
+    
+    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+        <div class="portfolio-content h-100">
+            <img src="assets/img/Bey.webp" class="img-fluid" alt="Bey Travel Project">
+            <div class="portfolio-info">
+                <a href="assets/img/Bey.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                </a>
+                <a href="https://bey.tripcouncel.com" target="_blank"  title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                </a>
+            </div>
+        </div>
+    </div><!-- End Portfolio Item -->
+    
+    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+        <div class="portfolio-content h-100">
+            <img src="assets/img/gotsaves.webp" class="img-fluid" alt="Got Saves Project">
+            <div class="portfolio-info">
+                <a href="assets/img/gotsaves.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                </a>
+                <a href="https://rizwanzaman65.github.io/gotsaves/" target="_blank"  title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                </a>
+            </div>
+        </div>
+    </div><!-- End Portfolio Item -->
+    
+    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+        <div class="portfolio-content h-100">
+            <img src="assets/img/wristwatch.webp" class="img-fluid" alt="Wristwatch Gems Project">
+            <div class="portfolio-info">
+                <a href="assets/img/wristwatch.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                </a>
+                <a href="https://wristwatchgems.com/" target="_blank"  title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                </a>
+            </div>
+        </div>
+    </div><!-- End Portfolio Item -->
+    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+      <div class="portfolio-content h-100">
+          <img src="assets/img/Shopbolt.webp" class="img-fluid" alt="Shopbolt Project">
+          <div class="portfolio-info">
+              <a href="assets/img/Shopbolt.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+              </a>
+              <a href="https://site.tripcouncel.com" target="_blank"  title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+              </a>
+          </div>
+      </div>
+  </div><!-- End Portfolio Item -->
+  
+  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+      <div class="portfolio-content h-100">
+          <img src="assets/img/profile.webp" class="img-fluid" alt="Profile Project">
+          <div class="portfolio-info">
+              <a href="assets/img/profile.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+              </a>
+              <a href="https://rizwanzaman65.github.io/Profile/" target="_blank"  title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+              </a>
+          </div>
+      </div>
+  </div><!-- End Portfolio Item -->
+  
+  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+      <div class="portfolio-content h-100">
+          <img src="assets/img/lead.webp" class="img-fluid" alt="Lead Generation Website Project">
+          <div class="portfolio-info">
+              <a href="assets/img/lead.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+              </a>
+              <a href="https://rizwanzaman65.github.io/Lead-Generation-Website/" target="_blank"  title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+              </a>
+          </div>
+      </div>
+  </div><!-- End Portfolio Item -->
+  
+  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+      <div class="portfolio-content h-100">
+          <img src="assets/img/car.webp" class="img-fluid" alt="Car Gurus Project">
+          <div class="portfolio-info">
+              <a href="assets/img/car.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+              </a>
+              <a href="https://rizwanzaman65.github.io/CarGurus/" target="_blank"  title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+              </a>
+          </div>
+      </div>
+  </div><!-- End Portfolio Item -->
+  
+  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+      <div class="portfolio-content h-100">
+          <img src="assets/img/soap.webp" class="img-fluid" alt="Soap Bar Project">
+          <div class="portfolio-info">
+              <a href="assets/img/soap.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+              </a>
+              <a href="https://rizwanzaman65.github.io/The-Soap-Bar/" target="_blank"  title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+              </a>
+          </div>
+      </div>
+  </div><!-- End Portfolio Item -->
+  
+  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+      <div class="portfolio-content h-100">
+          <img src="assets/img/qr.webp" class="img-fluid" alt="QR Code Generator Project">
+          <div class="portfolio-info">
+              <a href="assets/img/qr.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+              </a>
+              <a href="https://rizwanzaman65.github.io/Qr-Code-Generator/" target="_blank"  title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+              </a>
+          </div>
+      </div>
+  </div><!-- End Portfolio Item -->
+  <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+    <div class="portfolio-content h-100">
+        <img src="assets/img/ai.webp" class="img-fluid" alt="AI Project">
+        <div class="portfolio-info">
+            <a href="assets/img/ai.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                <i class="bi bi-zoom-in"></i>
+            </a>
+            <a href="https://rizwanzaman65.github.io/WriteAi/" target="_blank"  title="More Details" class="details-link">
+                <i class="bi bi-link-45deg"></i>
+            </a>
+        </div>
+    </div>
+</div><!-- End Portfolio Item -->
+
+<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+    <div class="portfolio-content h-100">
+        <img src="assets/img/ai content.webp" class="img-fluid" alt="AI Content Generator Project">
+        <div class="portfolio-info">
+            <a href="assets/img/ai content.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                <i class="bi bi-zoom-in"></i>
+            </a>
+            <a href="https://rizwanzaman65.github.io/AI-powered-content-generating/" target="_blank"  title="More Details" class="details-link">
+                <i class="bi bi-link-45deg"></i>
+            </a>
+        </div>
+    </div>
+</div><!-- End Portfolio Item -->
+
+<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+    <div class="portfolio-content h-100">
+        <img src="assets/img/email.webp" class="img-fluid" alt="Email Marketing Project">
+        <div class="portfolio-info">
+            <a href="assets/img/email.webp" title="Projects" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                <i class="bi bi-zoom-in"></i>
+            </a>
+            <a href="https://rizwanzaman65.github.io/Email-Marketing/" target="_blank"  title="More Details" class="details-link">
+                <i class="bi bi-link-45deg"></i>
+            </a>
+        </div>
+    </div>
+</div><!-- End Portfolio Item -->
+          <!-- Add more portfolio items here as needed -->
+
+        </div><!-- End All Portfolio Items -->
+      </div>
+    </div>
+  </div>
+</div><!-- End Modal -->
+
+<!-- JS Script -->
+<script>
+  // Initially hide portfolio items 4 and beyond
+  document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+    if (index >= 3) {
+      item.style.display = 'none';
+    }
+  });
+
+  // Show all portfolio items when "Load More" button is clicked
+  document.getElementById('load-more-btn').addEventListener('click', function() {
+    // Show modal with all items
+    var modal = new bootstrap.Modal(document.getElementById('portfolioModal'));
+    modal.show();
+
+    // Show remaining items in the modal
+    document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+      if (index >= 3) {
+        item.style.display = 'block';
+      }
+    });
+
+    // Hide the load more button after opening the modal
+    document.getElementById('load-more-btn').style.display = 'none';
+  });
+</script>
+
+    
+    
+       <!-- Contact Section -->
+<section id="contact" class="contact section">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <div><span>Let's Connect</span> <span class="description-title">I'd Love to Hear From You</span></div>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+      <!-- Address Info -->
+      <div class="col-md-5">
+        <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
+          <i class="icon bi bi-geo-alt flex-shrink-0"></i>
+          <div>
+            <h3>Location</h3>
+            <p>Garden West Karachi</p>
+          </div>
+        </div>
+
+
+
+
+        <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
+          <i class="icon bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Call Me</h3>
+            <a href="https://wa.me/923336623823">
+              <p style="color: white;">+92 333 6623823</p>
+            </a>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
+          <i class="icon bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:1rizwanzaman@gmail.com">
+              <p style="color: white;">1rizwanzaman@gmail.com</p>
+            </a>
+            
+            </a>
+          </div>
+        </div>
+      </div><!-- End Info Item -->
+
+      <!-- Call Info -->
+      
+        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+          <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.562954281761!2d67.01632087424737!3d24.878772244526676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f304b51ad01%3A0x35f00006ed2a971b!2zU2FuYSBQYWxhY2XblCDYq9mG2KfYoSDZvtuM2YTbjNiz!5e0!3m2!1sen!2s!4v1692777356112!5m2!1sen!2s"
+          frameborder="0" style="border:0; width: 100%; height: 300px;" allowfullscreen></iframe>
+        </div>
+ 
+
+  
+
+   
+
+    </div>
+
+    <!-- Contact Form -->
+<form 
+action="https://api.web3forms.com/submit" 
+method="POST" 
+class="php-email-form" 
+data-aos="fade-up" 
+data-aos-delay="600"
+onsubmit="handleSubmit(event)"
+>
+<!-- Hidden Web3Forms Access Key -->
+<input type="hidden" name="access_key" value="aaef1cc9-d0cb-4977-97d0-fa2a53d6a2bd">
+
+<div class="row gy-4">
+  <div class="col-md-6">
+    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+  </div>
+  <div class="col-md-6">
+    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+  </div>
+  <div class="col-md-12">
+    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+  </div>
+  <div class="col-md-12">
+    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+  </div>
+  <div class="col-md-12 text-center">
+    <button type="submit">Send Message</button>
+  </div>
+</div>
+</form>
+
+<!-- Thank You Popup -->
+<div id="thankYouPopup" class="popup">
+<div class="popup-content">
+  <p style="color: black;">Thank you! Your message has been sent successfully.</p>
+  <button onclick="closePopup()" style="background-color: #5C47B1;">Close</button>
+</div>
+</div>
+<script>
+  function handleSubmit(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const form = event.target;
+    showThankYouPopup("Sending..."); // Show the popup immediately with a loading message
+
+    // Send the form data to Web3Forms
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+    })
+      .then((response) => {
+        if (response.ok) {
+          updateThankYouMessage("Thank you! Your message has been sent successfully.");
+          form.reset(); // Clear the form
+        } else {
+          updateThankYouMessage("Something went wrong. Please try again.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        updateThankYouMessage("There was an error submitting your form.");
+      });
+  }
+
+  function showThankYouPopup(initialMessage = "Thank you!") {
+    const popup = document.getElementById("thankYouPopup");
+    const message = popup.querySelector("p");
+    message.textContent = initialMessage; // Set the initial message
+    popup.style.display = "block";
+  }
+
+  function updateThankYouMessage(newMessage) {
+    const popup = document.getElementById("thankYouPopup");
+    const message = popup.querySelector("p");
+    message.textContent = newMessage; // Update the popup message
+  }
+
+  function closePopup() {
+    const popup = document.getElementById("thankYouPopup");
+    popup.style.display = "none";
+  }
+</script>
+
+
+
+  </div>
+
+</section><!-- End Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container text-center">
+      <h3 class="sitename">Rizwan Zaman</h3>
+      <p>
+        Passionate Full-Stack Web Developer crafting modern, responsive, and user-friendly websites. 
+        Let's bring your ideas to life with seamless front-end and back-end solutions!
+      </p>
+      
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://twitter.com" target="_blank" class="mx-2"><i class="bi bi-twitter"></i></a>
+        <a href="https://facebook.com" target="_blank" class="mx-2"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" class="mx-2"><i class="bi bi-instagram"></i></a>
+        <a href="https://skype.com" target="_blank" class="mx-2"><i class="bi bi-skype"></i></a>
+        <a href="https://linkedin.com" target="_blank" class="mx-2"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="mt-4">
+        <div class="copyright">
+          <span>&copy; <script>document.write(new Date().getFullYear());</script></span>
+          <strong class="px-1 sitename">Rizwan Zaman</strong>
+          <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          Designed by 
+          <a href="#" target="_blank" style="color:white;">Rizwan Zaman</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
